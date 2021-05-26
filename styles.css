@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding:0;
+    margin:0;
+   background-image: url('img.jpeg');
+   background-size: cover;
+   background-position:center;
+   min-height:100vh;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+}
+
+h1{
+    font-size:4rem;
+}
+
+.countdown-container{
+    display:flex;
+
+}
+
+.big-text{
+    font-size:6rem;
+    line-height:1;
+    margin:0 2rem;
+
+}
+.countdown-el{
+    text-align:center;
+}
+
