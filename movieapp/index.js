@@ -126,6 +126,7 @@ async function getData(id){
           overviewshow.classList.toggle('overview')
       })
     })
+    dataArray=[];
 }
 
 //movie run time
