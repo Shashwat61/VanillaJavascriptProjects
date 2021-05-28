@@ -1,0 +1,123 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+    padding:0;
+    height:100vh;
+    background-color:#e5e5e5;
+    display:flex;
+    /* flex-direction: column; */
+   align-items:center;
+   justify-content: center;
+   /* justify-items: center; */
+}
+
+.search{
+    margin:0 16px;
+
+}
+.search>input{
+    padding:10px;
+    width:300px;
+    border:none;
+    outline:none;
+}
+
+
+.card{
+    width:400px;
+    /* z-index:99; */
+    box-shadow:0 0 10px  rgb(29, 27, 27);
+    /* border-radius:50%; */
+    /* overflow: hidden; */
+}
+.card__image{
+    height:400px;
+    width:100%;
+}
+.card__image img{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+}
+
+.card__movie--details{
+    display:flex;
+    flex-direction: column;
+    background-color:rgb(230, 225, 225) ;
+}
+.card__buttons{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__buttons--feature img{
+    margin:10px 16px;
+    
+}
+
+.card__buttons--overview{
+    padding: 10px;
+}
+
+.card__movie--popularity span{
+ margin:16px 16px;
+ font-size:16px;
+}
+.card__movie--popularity span:nth-child(1){
+    color:green;
+    font-weight:600;
+    /* font-size: 40px; */
+}
+.card__movie--popularity span:nth-child(2){
+border-radius:50%;
+background-color: red;
+padding:2px;
+font-weight: 600;
+border: 1px solid white;
+}
+.card__movie--popularity span:nth-child(3){
+font-weight:600;
+}
+
+.card__movie--genre {
+ /* list-style-type: none; */
+ display:flex;
+ margin-left:-34px;
+ /* padding:0 10px; */
+ 
+}
+.card__movie--genre li{
+    margin:0 10px;
+    font-weight: 600;
+}
+.card__movie--genre li:nth-child(1){
+    list-style-type: none;
+}
+
+.results{
+    
+
+}
+.select__movie{
+    padding:8px;
+    cursor: pointer;
+    /* background-color: rgba(224, 222, 222, 0.719); */
+    border-bottom:1px solid rgb(65, 64, 64);
+    transition: .01s ease-in;
+}
+
+.select__movie:hover{
+    background-color: grey;
+}
+
+
+.movie__name>h3{
+    /* text-align: center;  */
+    padding:5px;
+    margin:0;
+    
+    padding-left:16px;
+}
