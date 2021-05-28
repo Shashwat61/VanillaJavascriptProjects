@@ -7,10 +7,8 @@ body{
     height:100vh;
     background-color:#e5e5e5;
     display:flex;
-    /* flex-direction: column; */
-   align-items:center;
+    align-items:center;
    justify-content: center;
-   /* justify-items: center; */
 }
 
 .search{
@@ -27,22 +25,22 @@ body{
 
 .card{
     width:400px;
-    /* z-index:99; */
     box-shadow:0 0 10px  rgb(29, 27, 27);
-    /* border-radius:50%; */
-    /* overflow: hidden; */
 }
 .card__image{
+    position: relative;
+   
     height:400px;
     width:100%;
 }
 .card__image img{
     height:100%;
     width:100%;
-    object-fit: cover;
+    object-fit:inherit;
 }
 
 .card__movie--details{
+
     display:flex;
     flex-direction: column;
     background-color:rgb(230, 225, 225) ;
@@ -60,6 +58,7 @@ body{
 
 .card__buttons--overview{
     padding: 10px;
+    cursor: pointer;
 }
 
 .card__movie--popularity span{
@@ -72,11 +71,13 @@ body{
     /* font-size: 40px; */
 }
 .card__movie--popularity span:nth-child(2){
-border-radius:50%;
-background-color: red;
-padding:2px;
+/* border-radius:50%; */
+/* background-color: red; */
+/* padding:2px; */
 font-weight: 600;
-border: 1px solid white;
+
+
+/* border: 1px solid white; */
 }
 .card__movie--popularity span:nth-child(3){
 font-weight:600;
@@ -90,17 +91,18 @@ font-weight:600;
  
 }
 .card__movie--genre li{
-    margin:0 10px;
+    margin:0 8px;
+    list-style-type: none;
+    padding:8px;
+    background-color: rgb(78, 76, 76);
+    color:whitesmoke;
+    border-radius: 4px;
     font-weight: 600;
 }
 .card__movie--genre li:nth-child(1){
     list-style-type: none;
 }
 
-.results{
-    
-
-}
 .select__movie{
     padding:8px;
     cursor: pointer;
@@ -113,11 +115,53 @@ font-weight:600;
     background-color: grey;
 }
 
-
-.movie__name>h3{
-    /* text-align: center;  */
-    padding:5px;
+.movie__name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin:0;
+    padding:0 10px 0 16px;
+}
+
+.movie__name>span{
+    background-color: rgb(78, 76, 76);
+    padding:4px;
+    color:whitesmoke;
+    border-radius: 5px;
+}
+
+.card__movie--overview{
+        cursor: pointer;
+        position: absolute;
+        /* top:0; */
+        min-height: 50%;
+
+        overflow: scroll;
+        right:0;
+        left:0;
+        bottom:0;
+        background-color: #fff;
+        padding:2rem;
+        /* transform:translateY(50%); */
+        transition: transform 0.5s ease-in-out;
+        display: none;
+        overflow: scroll;
+        background-color: rgba(255,255,255,0.7);
+        
+
     
-    padding-left:16px;
+}
+
+.card__movie--overview::-webkit-scrollbar{
+    display: none;
+    
+}
+.overview{
+     animation: up 1s ease-in-out;
+    display:block;
+}
+
+@keyframes up {
+    0%{transform: translateY(10%);}
+     100%{transform: translateY(0%);}
 }
