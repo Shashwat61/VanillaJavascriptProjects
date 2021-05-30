@@ -4,11 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="index.js" defer></script>
-    <title>RecipeApp</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css"/>
+
+    <title>Document</title>
 </head>
 <body>
+    <div class="mobile-container">
+        <header>
+            <input type="text" id="search-term">
+            <button id="search"><i class="fa fa-search"></i></button>
+        </header>
+        <div class="fav-container">
+            <h3>Favorite Meals</h3>
+            <ul class="fav-meals" id="fav-meals">
+                <!-- <li><img src="https://www.themealdb.com/images/ingredients/Lime.png" alt=""><p>Lime</p></li>
+                <li><img src="https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg" alt=""><p>Chicken</p></li>
+                <li><img src="https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg" alt=""><p>Pasta</p></li>
+                <li><img src="https://www.themealdb.com/images/media/meals/xxpqsy1511452222.jpg" alt=""><p>VeggieSoup</p></li> -->
+                
+            </ul>
+        </div>
+        <div class="meals" id="meals">
+            
+        </div>
+    </div>
+    <div class="popup-container hide" id="meal-popup">
+        
+        <div class="popup" >
+            <button id="close-popup" class="close-popup"><i class="fas fa-times"></i></button>
+            <div class="meal-info" id="meal-info">
+            
+            </div>
+        </div>
+    </div>
     
 </body>
+<script src="index.js" type="text/javascript"></script>
 </html>
