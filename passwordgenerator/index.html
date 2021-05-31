@@ -9,6 +9,48 @@
     <title>Password Generator</title>
 </head>
 <body>
+    <div class="pw-container">
+        <div class="pw-header">
+
+            <div class="pw" >
+                <span id="pw"></span>
+                <button id="copy">Copy</button>
+            </div>
+        </div>
+            <div class="pw-body">
+                <div class="form-control">
+                    <label for="len">
+                     Password length
+                    </label>
+                <input type="number" value="15" id="len" type="number" max="30" min="8" />
+                </div>
+                <div class="form-control">
+                    <label for="upper">
+                     Contains upper case letters
+                    </label>
+                <input type="checkbox" id="upper"/>
+                </div>
+                <div class="form-control">
+                    <label for="lower">
+                     Contains lower case letters
+                    </label>
+                <input type="checkbox" id="lower"/>
+                </div>
+                <div class="form-control">
+                    <label for="number">
+                     Contains Numbers
+                    </label>
+                <input type="checkbox" id="number"/>
+                </div>
+                <div class="form-control">
+                    <label for="symbol">
+                     Contains Symbols
+                    </label>
+                <input type="checkbox" id="symbol"/>
+                </div>
+                <button class="generate" id="generate">Generate Password</button>
+        </div>
+    </div>
     
 </body>
 </html>
