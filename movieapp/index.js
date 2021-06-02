@@ -22,7 +22,8 @@ async function getMovies(url){
 function showResults(movies){
     console.log(movies)
        movies.forEach(movie=>{
-           const {title}=movie
+           const {title,id}=movie
+           console.log(title,id)
            
            
            const movieEl=document.createElement('div');
@@ -32,9 +33,9 @@ function showResults(movies){
            movieEl.innerHTML=`${title}`
            
            resultcontainer.appendChild(movieEl)
-           console.log(movieEl)
+          
            movieEl.addEventListener('click',(e)=>{
-             ReceiveValue(e.target.innerText,movies)
+             ReceiveValue(e.target.innerText,movies,id)
              resultcontainer.innerHTML=''
              
             })
@@ -45,9 +46,9 @@ function showResults(movies){
 }
 
 // match the value of the selected movie
-function ReceiveValue(text,movies){
- 
-    const test=movies.filter((movie)=>text==movie.title)
+function ReceiveValue(text,movies,id){
+ console.log(id)
+    const test=movies.filter((movie)=>id==movie.id)
      console.log(test)
     
      test.forEach((item)=>{
@@ -61,6 +62,7 @@ function ReceiveValue(text,movies){
 
 //get id,genre of selected movie  and show card
 async function getData(id){
+    console.log(id)
     movieid=id
     const data=await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=en-US`)
     const resp=await data.json();
@@ -69,17 +71,18 @@ async function getData(id){
     console.log(dataArray)
     dataArray.forEach((item)=>{
         const {title,poster_path,popularity,id,overview,vote_average,adult,runtime,genres}=item
-        console.log(title,poster_path,runtime,genres)
-  
-        const {0:{name:name1},  1:{name:name2}}=genres
-         
-        
-        console.log(name1,name2)
+        console.log(title,poster_path,runtime,genres.length)
+          if(genres.length>0){
 
+              const {0:{name:name1},  1:{name:name2}}=genres
+              
+              
+        console.log(name1,name2)
+        
         
         const main=document.createElement('div')
         main.classList.add('card');
-
+        
         main.innerHTML=
         `
         <div class="card__image">
@@ -95,38 +98,47 @@ async function getData(id){
           </div>
 
           <div class="card__buttons">
-              <div class="card__buttons--feature">
+          <div class="card__buttons--feature">
                   <img src="icons/play.svg" alt="">
                   <img src="icons/plus.svg" alt="">
                   <img src="icons/thumbsup.svg" alt="">
                   <img src="icons/thumbsdown.svg" alt="">
-                </div>
-                <div id="toggle" class="card__buttons--overview">
+                  </div>
+                  <div id="toggle" class="card__buttons--overview">
                     <img src="icons/down.svg" alt="">
-                </div>
-            </div>
-                <div class="card__movie--popularity">
+                    </div>
+                    </div>
+                    <div class="card__movie--popularity">
                     <span>${popularity}</span>
                     <span>${adult ? 'R' : 'G'}</span>
                     <span>${getRunTime(runtime)}</span>
-                </div>
-               
+                    </div>
+                    
                     <ul class="card__movie--genre">
-                      <li>${name1}</li>
-                      <li>${name2}</li>
-                       
+                    <li>${name1}</li>
+                    <li>${name2}</li>
+                    
                     </ul>
-        </div>`
+                    </div>`
+                    
+                    container.appendChild(main)
+                    const toggle=document.getElementById('toggle')
+                    const overviewshow=document.getElementById('overview')
+                    //toggling overview
+                    toggle.addEventListener('click',()=>{
+                        overviewshow.classList.toggle('overview')
+                    })
+                }
+                else{
+                    const main=document.createElement('div')
+                    main.classList.add('card');
 
-      container.appendChild(main)
-      const toggle=document.getElementById('toggle')
-      const overviewshow=document.getElementById('overview')
-      //toggling overview
-      toggle.addEventListener('click',()=>{
-          overviewshow.classList.toggle('overview')
-      })
-    })
-    dataArray=[];
+                    main.innerHTML=`<h1 class="nodata">No data available</h1>`
+                    container.appendChild(main)
+                }
+                })
+                dataArray=[];
+    console.log(dataArray)
 }
 
 //movie run time

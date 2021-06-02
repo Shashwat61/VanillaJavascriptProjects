@@ -152,6 +152,10 @@ font-weight:600;
     
 }
 
+.nodata{
+    text-align:center;
+}
+
 .card__movie--overview::-webkit-scrollbar{
     display: none;
     
