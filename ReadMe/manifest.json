@@ -1,0 +1,12 @@
+{
+    "manifest_version": 3,
+    "version": "0.1",
+    "name": "ReadMe ",
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "icon.png"
+    },
+    "description":"feeling lazy to read all? paste it here and let it do it's work",
+    "permissions": ["tabs"]
+}
+
